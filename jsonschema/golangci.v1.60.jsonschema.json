@@ -13,19 +13,18 @@
         "badLock",
         "badRegexp",
         "badSorting",
-        "badSyncOnceFunc",
         "boolExprSimplify",
         "builtinShadow",
         "builtinShadowDecl",
         "captLocal",
         "caseOrder",
         "codegenComment",
-        "commentFormatting",
         "commentedOutCode",
         "commentedOutImport",
+        "commentFormatting",
         "defaultCaseOrder",
-        "deferInLoop",
         "deferUnlambda",
+        "deferInLoop",
         "deprecatedComment",
         "docStub",
         "dupArg",
@@ -68,7 +67,6 @@
         "preferStringWriter",
         "preferWriteByte",
         "ptrToRefParam",
-        "rangeAppendAll",
         "rangeExprCopy",
         "rangeValCopy",
         "redundantSprint",
@@ -86,12 +84,13 @@
         "sprintfQuotedString",
         "sqlQuery",
         "stringConcatSimplify",
-        "stringXbytes",
         "stringsCompare",
+        "stringXbytes",
+        "suspiciousSorting",
         "switchTrue",
         "syncMapLoadAndDelete",
+        "timeCmpSimplify",
         "timeExprSimplify",
-        "todoCommentWithoutDetail",
         "tooManyResultsChecker",
         "truncateCmp",
         "typeAssertChain",
@@ -204,7 +203,6 @@
         "structtag",
         "testinggoroutine",
         "tests",
-        "timeformat",
         "unmarshal",
         "unreachable",
         "unsafeptr",
@@ -390,7 +388,6 @@
             "promlinter",
             "protogetter",
             "reassign",
-            "recvcheck",
             "revive",
             "rowserrcheck",
             "scopelint",
@@ -407,6 +404,7 @@
             "testpackage",
             "thelper",
             "tparallel",
+            "typecheck",
             "unconvert",
             "unparam",
             "unused",
@@ -522,7 +520,6 @@
                   "checkstyle",
                   "code-climate",
                   "junit-xml",
-                  "junit-xml-extended",
                   "github-actions",
                   "teamcity",
                   "sarif"
@@ -1106,11 +1103,6 @@
               "description": "Enable custom order of sections.",
               "type": "boolean",
               "default": false
-            },
-            "no-lex-order": {
-              "description": "Drops lexical ordering for custom sections.",
-              "type": "boolean",
-              "default": false
             }
           }
         },
@@ -1172,17 +1164,6 @@
               "description": "Trigger a warning for variable assignments in ginkgo containers like `Describe`, `Context` and `When`, instead of in `BeforeEach()`.",
               "type": "boolean",
               "default": false
-            }
-          }
-        },
-        "gochecksumtype": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "default-signifies-exhaustive": {
-              "description": "Presence of `default` case in switch statements satisfies exhaustiveness, if all members are not listed.",
-              "type": "boolean",
-              "default": true
             }
           }
         },
@@ -2189,18 +2170,13 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "detect-opposite": {
-              "type": "boolean",
-              "description": "In addition, detect opposite situation (simultaneous return of non-nil error and valid value).",
-              "default": false
-            },
             "checked-types": {
               "type": "array",
               "description": "List of return types to check.",
               "items": {
-                "enum": ["chan", "func", "iface", "map", "ptr", "uintptr", "unsafeptr"]
+                "enum": ["ptr", "func", "iface", "map", "chan", "uintptr", "unsafeptr"]
               },
-              "default": ["chan", "func", "iface", "map", "ptr", "uintptr", "unsafeptr"]
+              "default": ["ptr", "func", "iface", "map", "chan", "uintptr", "unsafeptr"]
             }
           }
         },
@@ -2911,9 +2887,7 @@
                   "blank-import",
                   "bool-compare",
                   "compares",
-                  "contains",
                   "empty",
-                  "encoded-compare",
                   "error-is-as",
                   "error-nil",
                   "expected-actual",
@@ -2923,7 +2897,6 @@
                   "len",
                   "negative-positive",
                   "nil-compare",
-                  "regexp",
                   "require-error",
                   "suite-broken-parallel",
                   "suite-dont-use-pkg",
@@ -2937,19 +2910,16 @@
                 "blank-import",
                 "bool-compare",
                 "compares",
-                "contains",
                 "empty",
-                "encoded-compare",
                 "error-is-as",
                 "error-nil",
                 "expected-actual",
                 "float-compare",
-                "formatter",
+                "float-compare",
                 "go-require",
                 "len",
                 "negative-positive",
                 "nil-compare",
-                "regexp",
                 "require-error",
                 "suite-broken-parallel",
                 "suite-dont-use-pkg",
@@ -2966,9 +2936,7 @@
                   "blank-import",
                   "bool-compare",
                   "compares",
-                  "contains",
                   "empty",
-                  "encoded-compare",
                   "error-is-as",
                   "error-nil",
                   "expected-actual",
@@ -2978,7 +2946,6 @@
                   "len",
                   "negative-positive",
                   "nil-compare",
-                  "regexp",
                   "require-error",
                   "suite-broken-parallel",
                   "suite-dont-use-pkg",

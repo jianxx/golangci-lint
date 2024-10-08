@@ -6,6 +6,11 @@ title: FAQ
 
 The same as the Go team (the 2 latest minor versions).
 
+Basically, golangci-lint supports Go versions lower or equal to the Go version used to compile it.
+
+New versions of Go are not automatically supported because, in addition of the Go version used to build it,
+some linters and/or internal pieces of golangci-lint could need to be adapted to support this new Go version.
+
 ## How to use `golangci-lint` in CI
 
 Run `golangci-lint` in CI and check the exit code. If it's non-zero - fail the build.
@@ -45,7 +50,19 @@ How to troubleshoot:
 - [ ] Ensure you are not running an analysis on code that depends on files/packages outside the scope of the analyzed elements.
 - [ ] If using CGO, ensure all require system libraries are installed.
 
-## Why running with `--fast` is slow on the first run
+## Why is it not possible to skip/ignore `typecheck` errors?
+
+For mainly the same reasons that you cannot compile when you have a compiler error.
+
+`typecheck` errors are reported in the same style as linter reports/issues,
+but are completely different because they are related to problems that block the analysis (`typecheck` is not a linter).
+
+When there are `typecheck` errors,
+most linters are not able to perform the analysis,
+and they simply do not produce any reports,
+so it's not possible to skip/ignore `typecheck` errors.
+
+## Why running with `--fast` is slow on the first run?
 
 Because the first run caches type information. All subsequent runs will be fast.
 Usually this options is used during development on local machine and compilation was already performed.

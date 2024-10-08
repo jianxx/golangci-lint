@@ -319,7 +319,7 @@
   },
   {
     "name": "fatcontext",
-    "desc": "detects nested contexts in loops",
+    "desc": "detects nested contexts in loops and function literals",
     "loadMode": 575,
     "inPresets": [
       "performance"
@@ -759,7 +759,7 @@
     ],
     "originalURL": "https://github.com/ckaznocha/intrange",
     "internal": false,
-    "isSlow": false,
+    "isSlow": true,
     "since": "v1.57.0"
   },
   {
@@ -1386,7 +1386,7 @@
     "inPresets": [
       "style"
     ],
-    "originalURL": "https://github.com/golangci/golangci-lint/blob/master/pkg/golinters/nolintlint/README.md",
+    "originalURL": "https://github.com/golangci/golangci-lint/tree/master/pkg/golinters/nolintlint/internal",
     "internal": false,
     "canAutoFix": true,
     "isSlow": false,
