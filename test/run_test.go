@@ -133,7 +133,7 @@ func TestCgoWithIssues(t *testing.T) {
 			desc:     "gofmt",
 			args:     []string{"--no-config", "--disable-all", "-Egofmt"},
 			dir:      "cgo_with_issues",
-			expected: "File is not `gofmt`-ed with `-s` (gofmt)",
+			expected: "File is not properly formatted (gofmt)",
 		},
 		{
 			desc:     "revive",
@@ -186,7 +186,7 @@ func TestLineDirective(t *testing.T) {
 				"--disable-all",
 			},
 			targetPath: "linedirective",
-			expected:   "File is not `gofmt`-ed with `-s` (gofmt)",
+			expected:   "File is not properly formatted (gofmt)",
 		},
 		{
 			desc: "goimports",
@@ -195,7 +195,7 @@ func TestLineDirective(t *testing.T) {
 				"--disable-all",
 			},
 			targetPath: "linedirective",
-			expected:   "File is not `goimports`-ed (goimports)",
+			expected:   "File is not properly formatted (goimports)",
 		},
 		{
 			desc: "gomodguard",
@@ -216,7 +216,7 @@ func TestLineDirective(t *testing.T) {
 			},
 			configPath: "testdata/linedirective/lll.yml",
 			targetPath: "linedirective",
-			expected:   "the line is 57 characters long, which exceeds the maximum of 50 characters. (lll)",
+			expected:   "The line is 57 characters long, which exceeds the maximum of 50 characters. (lll)",
 		},
 		{
 			desc: "misspell",
